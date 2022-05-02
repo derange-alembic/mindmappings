@@ -11,6 +11,7 @@ from mindmappings.utils.plot_graph import plot_graph
 from mindmappings.utils.utils import non_increasing
 from mindmappings.utils.parallelProcess import parallelProcess
 from mindmappings.gradSearch.dataGen.dataGen import DataGen
+from mindmappings.gradSearch.dataGen.singleDataGen import SingleDataGen
 from mindmappings.gradSearch.dataGen.dataProcess import DataProcess
 from mindmappings.gradSearch.train.train_surrogate import TrainSurrogate
 from mindmappings.gradSearch.search.search import Tuner
@@ -43,6 +44,16 @@ def main(args):
             os.makedirs(datagen_path)
         print("\n\nLaunching Data Gen. Writing to {0}".format(datagen_path))
         datagen = DataGen(Model, parameters=parameters, path=datagen_path)
+        datagen.run()
+        print("\n\n Done!")
+    
+    # Single problem generation
+    if (args.command == 'singledatagen'):
+        datagen_path = args.path if(args.path!=None) else parameters.DATASET_UNPROCESSED_PATH
+        if(not os.path.isdir(datagen_path)):
+            os.makedirs(datagen_path)
+        print("\n\nLaunching Data Gen. Writing to {0}".format(datagen_path))
+        datagen = SingleDataGen(Model, parameters=parameters, path=datagen_path)
         datagen.run()
         print("\n\n Done!")
 

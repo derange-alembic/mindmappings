@@ -102,9 +102,9 @@ class Parameters:
 
         # ------ Data generation ----------
         self.DATASET_UNPROCESSED_PATH = self.SCRATCH + '/timeloop/dataset_unprocessed_' + self.ALGORITHM + '/'
-        self.DATASET_NUMFILES = 100 # Total number files.
-        self.DATASET_NUMSAMPLES_FILE = 100000 # This determines the size of each file. Dataset size = NUMFILES * NUMSAMPLES_FILE
-        self.DATASET_MAPPINGS_PER_PROBLEM = 500 # Set this to control the number of mappings per problem. (higher if each problem is complex)
+        self.DATASET_NUMFILES = 50 # Total number files.
+        self.DATASET_NUMSAMPLES_FILE = 200 # This determines the size of each file. Dataset size = NUMFILES * NUMSAMPLES_FILE
+        self.DATASET_MAPPINGS_PER_PROBLEM = 10000 # Set this to control the number of mappings per problem. (higher if each problem is complex)
 
         # ------- Data Post process --------
 
