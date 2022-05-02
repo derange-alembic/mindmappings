@@ -248,9 +248,9 @@ class Model_MTTKRP(Timeloop):
                     cost.append(float(data[idx].split(" ")[-2]))
                 elif(energy_count > 62):
                     break
-        cost.append(float(data[-28].split(" ")[-1])) # Utilization
-        cost.append(float(data[-26].split(" ")[-2])) # Energy (uJ)
-        cost.append(float(data[-27].split(" ")[-1])) # Cycles
+        cost.append(float(data[-29].split(" ")[-1])) # Utilization
+        cost.append(float(data[-27].split(" ")[-2])) # Energy (uJ)
+        cost.append(float(data[-28].split(" ")[-1])) # Cycles
 
         return cost
 

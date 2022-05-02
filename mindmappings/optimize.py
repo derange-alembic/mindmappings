@@ -40,7 +40,7 @@ def main(args):
     if(args.command == 'datagen'):
         datagen_path = args.path if(args.path!=None) else parameters.DATASET_UNPROCESSED_PATH
         if(not os.path.isdir(datagen_path)):
-            os.mkdir(datagen_path)
+            os.makedirs(datagen_path)
         print("\n\nLaunching Data Gen. Writing to {0}".format(datagen_path))
         datagen = DataGen(Model, parameters=parameters, path=datagen_path)
         datagen.run()
@@ -55,7 +55,7 @@ def main(args):
             sys.exit("Unprocessed data not found")
         # Output path
         if(not os.path.isdir(data_path)):
-            os.mkdir(data_path)
+            os.makedirs(data_path)
         print("\n\nLaunching Data Process. Writing to {0}".format(data_path))
         preprocess = DataProcess(parameters=parameters, path=datagen_path, out_path=data_path)
         preprocess.run()
@@ -69,7 +69,7 @@ def main(args):
         if(not os.path.isdir(data_path)):
             sys.exit("Dataset not found")
         if(not os.path.isdir(saved_path)):
-            os.mkdir(saved_path)
+            os.makedirs(saved_path)
         shutil.copy(data_path+ '/' + parameters.MEANSTD, saved_path + '/' + parameters.MEANSTD)
         surrogate = TrainSurrogate(parameters=parameters, dataset_path=data_path, saved_model_path=saved_path)
         surrogate.trainer()
@@ -98,7 +98,7 @@ def main(args):
 
         # Create the output directory
         if(not os.path.exists(parameters.GSEARCH_OUTPATH)):
-            os.mkdir(parameters.GSEARCH_OUTPATH)
+            os.makedirs(parameters.GSEARCH_OUTPATH)
         outfile = parameters.GSEARCH_OUTPATH + 'dataGSearch_isoiter_' + str(parameters.ALGORITHM) + '.npy'
         print("Writing to ", outfile)
 

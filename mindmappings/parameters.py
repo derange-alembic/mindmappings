@@ -17,7 +17,7 @@ class Parameters:
 
         # Set a scratch path to write temporary files.
         # Tip: Use a fast memory to speed-up runs.
-        self.SCRATCH = None # SETME
+        self.SCRATCH = '/tmp/' # SETME
 
         # Sets the cost metric
         self.COST_METRIC = metric #'energy'/'perf'/'EDP'
@@ -76,10 +76,10 @@ class Parameters:
         #####################################################################
 
         # Path to executable: Install timeloop and point to the timeloop directory.
-        self.TIMELOOP_PATH = None #SETME
+        self.TIMELOOP_PATH = '/usr/local/bin' #SETME
 
         # Executable (timeloop-model)
-        self.COSTMODEL_EXECUTABLE =  os.path.join(self.TIMELOOP_PATH ,'build/timeloop-model')
+        self.COSTMODEL_EXECUTABLE =  os.path.join(self.TIMELOOP_PATH ,'timeloop-model')
 
         # Use this as a base to edit the timeloop configs
         if(self.ALGORITHM == 'CNN-layer'):

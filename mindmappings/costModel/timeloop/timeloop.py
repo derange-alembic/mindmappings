@@ -41,7 +41,7 @@ class Timeloop:
         # Append the threadID to create a unique directory
         out_dir =  self.parameters.OUTPUT_DIR_BASE + unique_ID
         if(not os.path.exists(out_dir)):
-            os.mkdir(out_dir)
+            os.makedirs(out_dir)
         cfg_out = out_dir + '/arch.yaml', out_dir + '/map.yaml', out_dir + '/prob.yaml', out_dir + '/model.yaml'
 
         return out_dir, cfg_out, os.path.join(out_dir, str(unique_ID)+ self.parameters.OUTPUT_FILE)

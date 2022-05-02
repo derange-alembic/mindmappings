@@ -83,7 +83,7 @@ class DataGen:
         # Setup Path
         if(not os.path.isdir(self.path)):
             print("Creating the dataset path at {0}".format(self.path))
-            os.mkdir(self.path)
+            os.makedirs(self.path)
 
         # Call threads in parallel to write the data
         # Processed = Parallel(n_jobs=-1)(delayed(getDataset)(path, ind, samplesperFile) for ind in range(numFiles))

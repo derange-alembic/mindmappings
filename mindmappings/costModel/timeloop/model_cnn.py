@@ -247,9 +247,9 @@ class Model_CNN(Timeloop):
                     cost.append(float(data[idx].split(" ")[-2]))
                 elif(energy_count > 62):
                     break
+        cost.append(float(data[-25].split(" ")[-1]))
+        cost.append(float(data[-23].split(" ")[-2]))
         cost.append(float(data[-24].split(" ")[-1]))
-        cost.append(float(data[-22].split(" ")[-2]))
-        cost.append(float(data[-23].split(" ")[-1]))
 
         return cost
 
